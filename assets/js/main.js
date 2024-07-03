@@ -61,12 +61,23 @@
 
   // ===== Faq accordion
   const faqs = document.querySelectorAll(".single-faq");
-  faqs.forEach((el) => {
-    el.querySelector(".faq-btn").addEventListener("click", () => {
-      el.querySelector(".icon").classList.toggle("rotate-180");
-      el.querySelector(".faq-content").classList.toggle("hidden");
-    });
+faqs.forEach((el) => {
+  const faqBtn = el.querySelector(".faq-btn");
+  const icon = el.querySelector(".icon");
+  const faqContent = el.querySelector(".faq-content");
+
+  faqBtn.addEventListener("mouseenter", () => {
+    icon.classList.add("rotate-180");
+    faqContent.classList.add("show");
   });
+
+  faqBtn.addEventListener("mouseleave", () => {
+    icon.classList.remove("rotate-180");
+    faqContent.classList.remove("show");
+  });
+});
+
+  
 
   // ===== wow js
   new WOW().init();

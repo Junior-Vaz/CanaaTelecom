@@ -21,6 +21,15 @@
   border-color: #e5e7eb;
   /* 2 */
 }
+.faq-content {
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.faq-content.show {
+  max-height: 200px; /* ou a altura máxima que você espera que o conteúdo tenha */
+}
 
 ::before,
 ::after {
@@ -1496,6 +1505,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 4rem;
 }
 
+
+.text-\[50px\]{
+  font-size: 3rem;
+}
+
+.text-gray{
+  color: gray;
+}
+
 .text-\[32px\]{
   font-size: 32px;
 }
@@ -1604,6 +1622,47 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(33 43 54 / var(--tw-text-opacity));
 }
 
+.text-blue{
+  color: #179BEE;
+}
+
+/*--------- animação cards  --------------------------------
+
+.custom-card1 {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  animation: floatUpDown 2s ease-in-out infinite alternate;
+}
+
+.custom-card2 {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  animation: floatUpDown 3s ease-in-out infinite alternate;
+}
+
+.custom-card3 {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.4s ease-in-out;
+  animation: floatUpDown 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px); Subir 
+  }
+}
+
+/*------------------------------------------------ fim */
+ 
 .text-\[\#fbb040\]{
   --tw-text-opacity: 1;
   color: rgb(251 176 64 / var(--tw-text-opacity));
@@ -1865,6 +1924,11 @@ body {
 .hover\:border-primary:hover{
   --tw-border-opacity: 1;
   border-color: rgb(48 86 211 / var(--tw-border-opacity));
+}
+
+.hover\:bg-white:hover{
+  --tw-border-opacity: 1;
+  background-color: white;
 }
 
 .hover\:border-dark:hover{
@@ -2409,7 +2473,16 @@ body {
   .lg\:pl-0{
     padding-left: 0px;
   }
+  /*------------ form -------------*/
+  .mb-20px{
+    margin-bottom: 20px;
+  }
+  .w-full-form{
+    width: 150%;
+  }
 
+
+ /*--------------------------------------------------------*/
   .lg\:pr-4{
     padding-right: 1rem;
   }
