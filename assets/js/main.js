@@ -32,6 +32,37 @@
     }
   };
 
+  //----------------------------------------------------------------
+  
+  // Captura os elementos do DOM
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const confirmBtn = document.getElementById('confirmBtn');
+const cancelBtn = document.getElementById('cancelBtn');
+const modal = document.getElementById('myModal');
+
+// Função para abrir o modal
+function openModal() {
+    modal.style.display = 'block';
+}
+
+// Função para fechar o modal
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+// Event listeners para abrir e fechar o modal
+openModalBtn.addEventListener('click', openModal);
+closeModalBtn.addEventListener('click', closeModal);
+cancelBtn.addEventListener('click', closeModal);
+
+// Event listener para ação de confirmação
+confirmBtn.addEventListener('click', function() {
+    alert('Ação de confirmar!');
+    closeModal();
+});
+
+
   // ===== responsive navbar
   let navbarToggler = document.querySelector("#navbarToggler");
   const navbarCollapse = document.querySelector("#navbarCollapse");

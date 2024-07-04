@@ -875,6 +875,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 2.5rem;
 }
 
+.w-1f{
+  width: 4rem;
+  height: 4rem;
+  
+}
+
 .w-3{
   width: 0.75rem;
 }
@@ -1115,10 +1121,63 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
 
+.mr-12{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 .border-primary{
   --tw-border-opacity: 1;
   border-color: rgb(48 86 211 / var(--tw-border-opacity));
 }
+
+.bg-header{
+  background: url(/assets/images/header/header-back2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+/*----------------------------------------------------------------*
+/* botão whatsapp fixed */
+
+.whatsapp-button {
+  position: fixed;
+  margin-bottom: 50px;
+  bottom: 4rem;
+  right: 2rem;
+  background-color: green; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto */
+  padding: 1rem; /* Espaçamento interno */
+  border-radius: 15px; /* Borda arredondada para criar um botão circular */
+  transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+  animation: bounce 1.2s infinite; /* Animação pulsante */
+}
+
+
+
+.whatsapp-icon {
+  width: 2.0rem; /* Largura do ícone do WhatsApp */
+  height: 2.0rem; /* Altura do ícone do WhatsApp */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+
+
+
+
+*/
 
 .border-\[\#D4DEFF\]{
   --tw-border-opacity: 1;
@@ -1719,15 +1778,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .shadow-md{
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow: 0 4px 6px -1px rgba(104, 104, 104, 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-testimonial{
-  --tw-shadow: 0px 60px 120px -20px #EBEFFD;
+  --tw-shadow: 0px 60px 120px -20px #858586d7;
   --tw-shadow-colored: 0px 60px 120px -20px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #b8181800), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-pricing{
@@ -1745,7 +1804,84 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(48 86 211 / var(--tw-ring-opacity));
 }
+/* ---------------- modal ----------------*/
 
+/* Estilos para o modal */
+.modal {
+    display: none; /* Inicia oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    z-index: 9999; /* Posição acima de outros elementos */
+    overflow: auto; /* Rolagem se necessário */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centraliza vertical e horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    max-width: 600px; /* Largura máxima */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.modal-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: #888;
+}
+
+.modal-body {
+    padding: 10px 0;
+}
+
+.modal-footer {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.btn-confirm,
+.btn-cancel {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-confirm {
+    background-color: #4CAF50;
+    color: white;
+    margin-right: 10px;
+}
+
+.btn-cancel {
+    background-color: #ccc;
+    color: black;
+}
+
+/*----------------------------------------------------------------*/
 .grayscale{
   --tw-grayscale: grayscale(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -2469,10 +2605,37 @@ body {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-
+  .p-15{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 15px;
+    padding-right: 20px;
+    font-size: 1.3rem;
+  }
   .lg\:pl-0{
     padding-left: 0px;
   }
+  .bg-contr{
+    background-color: #179BEE;
+  }
+  .bg-green{
+    background-color: rgb(9, 148, 9);
+  }
+  .rounded-20{
+    border-radius: 40px;
+  }
+
+  .background{
+    background: url(/assets/images/about/about-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .border-none{
+    border: 0px;
+  }
+  
   /*------------ form -------------*/
   .mb-20px{
     margin-bottom: 20px;
