@@ -34,34 +34,32 @@
 
   //----------------------------------------------------------------
   
-  // Captura os elementos do DOM
-const openModalBtn = document.getElementById('openModalBtn');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const confirmBtn = document.getElementById('confirmBtn');
-const cancelBtn = document.getElementById('cancelBtn');
-const modal = document.getElementById('myModal');
-
 // Função para abrir o modal
-function openModal() {
-    modal.style.display = 'block';
-}
 
-// Função para fechar o modal
-function closeModal() {
-    modal.style.display = 'none';
-}
+var openModalBtn = document.getElementById('openModalBtn');
+var modal = document.getElementById('videoModal');
+const video = modal.querySelector('video'); // Seleciona o elemento de vídeo dentro do modal
 
-// Event listeners para abrir e fechar o modal
-openModalBtn.addEventListener('click', openModal);
-closeModalBtn.addEventListener('click', closeModal);
-cancelBtn.addEventListener('click', closeModal);
+// Quando o botão for clicado, abrir o modal
+openModalBtn.addEventListener('click', function() {
+  modal.style.display = 'block';
+  video.play();
 
-// Event listener para ação de confirmação
-confirmBtn.addEventListener('click', function() {
-    alert('Ação de confirmar!');
-    closeModal();
 });
 
+// Encontrar o elemento de fechar e fechar o modal quando clicar no 'x'
+var closeModalBtn = document.getElementsByClassName('close')[0];
+closeModalBtn.addEventListener('click', function() {
+  modal.style.display = 'none';
+});
+
+// Fechar o modal clicando fora dele (opcional)
+window.addEventListener('click', function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+    video.pause();
+  }
+});
 
   // ===== responsive navbar
   let navbarToggler = document.querySelector("#navbarToggler");
