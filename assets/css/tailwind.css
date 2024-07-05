@@ -1133,7 +1133,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .bg-header{
-  background: url(/assets/images/header/header-back2.jpg);
+  background: url(/assets/images/header/header-back2.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -2242,7 +2242,7 @@ body {
   opacity: 1;
 }
 
-@media (min-width: 400px) {
+@media (max-width: 500px) {
   .mr-12{
     margin-left: 0px;
     margin-right: 0px;
