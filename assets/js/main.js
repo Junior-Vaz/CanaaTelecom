@@ -34,32 +34,7 @@
 
   //----------------------------------------------------------------
   
-// Função para abrir o modal
 
-var openModalBtn = document.getElementById('openModalBtn');
-var modal = document.getElementById('videoModal');
-const video = modal.querySelector('video'); // Seleciona o elemento de vídeo dentro do modal
-
-// Quando o botão for clicado, abrir o modal
-openModalBtn.addEventListener('click', function() {
-  modal.style.display = 'block';
-  video.play();
-
-});
-
-// Encontrar o elemento de fechar e fechar o modal quando clicar no 'x'
-var closeModalBtn = document.getElementsByClassName('close')[0];
-closeModalBtn.addEventListener('click', function() {
-  modal.style.display = 'none';
-});
-
-// Fechar o modal clicando fora dele (opcional)
-window.addEventListener('click', function(event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-    video.pause();
-  }
-});
 
   // ===== responsive navbar
   let navbarToggler = document.querySelector("#navbarToggler");
