@@ -544,6 +544,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .left-0{
   left: 0px;
+
 }
 
 .right-4{
@@ -1131,13 +1132,61 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(48 86 211 / var(--tw-border-opacity));
 }
+/*------------------------ carrousel de logos ----------------------------------------*/
+.carousel {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #0070e7;
+}
 
-.bg-header{
-  background: url(/assets/images/header/header-back2.webp);
-  background-repeat: no-repeat;
-  background-position: center;
+.carousel-inner {
+  display: flex;
+  animation: carousel-animation 30s linear infinite; /* ajuste a duração e animação conforme necessário */
+  gap: 70px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.carousel-inner img {
+  max-width: 100px; /* ajuste o tamanho máximo dos logos conforme necessário */
+  margin: 0 10px; /* espaçamento entre os logos */
+}
+
+@keyframes carousel-animation {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+
+/*----------------------------------------------------------------*/
+#home {
+ /* overflow: hidden; Para esconder o overflow durante a animação */
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: slideBackground 10s alternate-reverse  infinite;
+}
 
+
+/* Animação do background */
+@keyframes slideBackground {
+  0% {
+    background-image: url('/assets/images/header/header-back3.jpg'); /* Primeira imagem de fundo */
+  }
+  33.33% {
+    background-image: url('/assets/images/header/header-back4.jpg'); /* Primeira imagem de fundo */
+  }
+  66.66% {
+    background-image: url('/assets/images/header/header-back2.webp'); /* Primeira imagem de fundo */
+  }
+  100% {
+    background-image: url('/assets/images/header/header-back5.jpg'); /* Primeira imagem de fundo */
+  }
 }
 /*----------------------------------------------------------------*
 /* botão whatsapp fixed */
@@ -1213,10 +1262,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(48 86 211 / var(--tw-bg-opacity));*/
-  /*background-image: url(/assets/images/hero/Post_Canaãtelecom_Abril_v4Company_2Prancheta-1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;*/
 }
 
 .bg-\[\#f5f8ff\]{
@@ -2242,6 +2287,14 @@ body {
   opacity: 1;
 }
 
+
+@media (max-width: 500px){
+  .footeer-logo{
+    display: none;
+  }
+}
+
+
 @media (max-width: 500px) {
   .mr-12{
     margin-left: 0px;
@@ -2697,6 +2750,7 @@ body {
   /*------------ form -------------*/
   .mb-20px{
     margin-bottom: 20px;
+ 
   }
   .w-full-form{
     width: 150%;
