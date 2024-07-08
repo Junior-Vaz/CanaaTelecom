@@ -481,10 +481,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .container{
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 16px;
-  padding-left: 16px;
+  gap: 100px;
 }
 
 @media (min-width: 540px){
@@ -532,39 +529,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .relative{
   position: relative;
 }
-/*--------------------------------*/
-.bg-trans, .bg-trans1 {
-  background-color: #0d1018a1; /* Ajuste a cor de fundo conforme necessário */
-  transition: all .8s ease-in-out;
-}
 
-.bg-trans:hover {
-  width: 200%;
-  transition: all .8s ease-in-out;
-  background-color: #0a0f1348;
-}
-
-.bg-trans1:hover {
-  width: 200%;
-  transition: all .8s ease-in-out;
-  background-color: #07090a48;
-}
-
-.menu{
-  background-color: #eeeeee;
-  width: 40rem;
-  height: 400px;
-  border-radius: 30px;
-}
-
-.logo{
-  display: flex;
-  position: absolute;
-  width: 500px;
-  left: 40%;
-}
-
-/*--------------------------------*/
 .sticky{
   position: -webkit-sticky;
   position: sticky;
@@ -572,10 +537,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .top-0{
   top: 0px;
-}
-
-.gap-0{
- gap: 50px;
 }
 
 .left-0{
@@ -1156,10 +1117,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
+.w-30{
+  width: 400px;
+}
 
 .mr-12{
   margin-left: 50px;
   margin-right: 50px;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 
@@ -1169,11 +1140,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .bg-header{
-  background: url(/assets/images/header/header-back.jpg);
+  background: url(/assets/images/about/about-background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
 }
 /*----------------------------------------------------------------*
 /* botão whatsapp fixed */
@@ -1246,14 +1216,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.h-f{
-  text-align: center;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(48 86 211 / var(--tw-bg-opacity));*/
@@ -1262,6 +1224,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-position: center;
   background-size: cover;*/
 }
+
 
 .bg-\[\#f5f8ff\]{
   --tw-bg-opacity: 1;

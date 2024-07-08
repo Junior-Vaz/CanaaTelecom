@@ -8,459 +8,144 @@
   <title>
     Canaa Telecom
   </title>
-  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
-  <link rel="stylesheet" href="assets/css/tailwind_home.css" />
-  
+  <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/assets/css/animate.css" />
+  <link rel="stylesheet" href="/assets/css/tailwind1.css" />  
+  <link rel="stylesheet" href="/assets/css/loading.css">
   <!-- ==== WOW JS ==== -->
-  <script src="assets/js/wow.min.js"></script>
-
+  <script src="/assets/js/wow.min.js"></script>
+  <script src="/assets/js/loading.js"></script>
   <script>
     new WOW().init();
   </script>
 </head>
+<body  class="bg-header flex justify-center items-center">
+  <div class="loader" id="loader"></div>
 
-<body>
+  <!-- ====== Hero Section Start -->
+  <div id="home" class="header">
+    <div class="container flex justify-between items-center flex-wrap w-full">
+  
+      <!---LOGO------->
+      <div class="w-30">
+        <img src="/assets/images/logo/logo-white.svg" alt="" class="w-full">
+      </div>
+  
+      <!---TEXT------->
+      <div class="flex items-center ">
+        <div class="w-full">
+          <div class="
+                      max-w-[780px]
+                      mx-auto
+                      wow
+                      fadeInUp
+                    " data-wow-delay=".2s">
+            <h1 class="
+                        text-white
+                        font-bold
+                        text-3xl
+                        sm:text-4xl
+                        md:text-[45px]
+                        leading-snug
+                        sm:leading-snug
+                        md:leading-snug
+                        mb-2
+                      ">
+                      Muito mais benefícios <br>  para você e sua família.
+             
+            </h1>
+            <p class="
+                        text-base
+                        sm:text-lg sm:leading-relaxed
+                        md:text-xl md:leading-relaxed
+                        mx-auto
+                        mb-10
+                        text-[#e4e4e4]
+                        max-w-[]
+                      ">
+                      Escolha as seguintes regiões:           </p>
+            <ul class="flex flex-wrap items-center justify-start mb-10">
+              <li>
+                <a target="_blank"
+                  href="/DF/index.html"
+                  class="
+                      py-4
+                      px-6
+                      sm:px-10
+                      inline-flex
+                      font-medium
+                      items-end
+                      justify-center
+                      text-center text-white text-base
+                      bg-darkr
+                      hover:text-white hover:shadow-lg
+                      hover:bg-primary hover:border-white
+                      font-normal
+                      rounded-lg
+                      transition
+                      duration-300
+                      ease-in-out
+                    ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    
+                    
+                    
+                  Brasília - DF
+                </a>
+  
+              </li>
 
-  <!-- ====== Navbar Section Start -->
-  <div id="header" class="
-        ud-header
-        bg-transparent
-        absolute
-        top-0
-        left-0
-        z-40
-        w-full
-        flex
-        items-center
-      ">
-    <div class="container">
-      <div class="flex -mx-4 items-center justify-between relative">
-        <div class="px-4 w-60 max-w-full">
-          <a href="index.html" class="navbar-logo w-full block py-5">
-            <img src="assets/images/logo/logo-white.svg" alt="logo" class="w-full header-logo" />
-          </a>
-        </div>
-        <div class="flex px-4 justify-between items-center w-full">
-          <div>
-            <button id="navbarToggler" class="
-                  block
-                  absolute
-                  right-4
-                  top-1/2
-                  -translate-y-1/2
-                  lg:hidden
-                  focus:ring-2
-                  ring-primary
-                  px-3
-                  py-[6px]
-                  rounded-lg
-                ">
-              <span class="relative w-[30px] h-[2px] my-[6px] block bg-white"></span>
-              <span class="relative w-[30px] h-[2px] my-[6px] block bg-white"></span>
-              <span class="relative w-[30px] h-[2px] my-[6px] block bg-white"></span>
-            </button>
-            <nav id="navbarCollapse" class="
-                  absolute
-                  py-5
-                  lg:py-0 lg:px-4
-                  xl:px-6
-                  bg-white
-                  lg:bg-transparent
-                  shadow-lg
-                  rounded-lg
-                  max-w-[250px]
-                  w-full
-                  lg:max-w-full lg:w-full
-                  right-4
-                  top-full
-                  hidden
-                  lg:block lg:static lg:shadow-none
-                ">
-              <ul class="blcok lg:flex">
-                <li class="relative group">
-                  <a href="/DF/404.html" class="
-                        ud-menu-scroll
-                        text-base text-dark
-                        lg:text-white
-                        lg:group-hover:opacity-70
-                        lg:group-hover:text-white
-                        group-hover:text-primary
-                        py-2
-                        lg:py-6 lg:inline-flex lg:px-0
-                        flex
-                        mx-8
-                        lg:mr-0
-                      ">
-                    Home
-                  </a>
-                </li>
-                <li class="relative group">
-                  <a href="#vantagens" class="
-                        ud-menu-scroll
-                        text-base text-dark
-                        lg:text-white
-                        lg:group-hover:opacity-70
-                        lg:group-hover:text-white
-                        group-hover:text-primary
-                        py-2
-                        lg:py-6 lg:inline-flex lg:px-0
-                        flex
-                        mx-8
-                        lg:mr-0 lg:ml-7
-                        xl:ml-12
-                      ">
-                    Vantagens
-                  </a>
-                </li>
-                <li class="relative group">
-                  <a href="#pricing" class="
-                        ud-menu-scroll
-                        text-base text-dark
-                        lg:text-white
-                        lg:group-hover:opacity-70
-                        lg:group-hover:text-white
-                        group-hover:text-primary
-                        py-2
-                        lg:py-6 lg:inline-flex lg:px-0
-                        flex
-                        mx-8
-                        lg:mr-0 lg:ml-7
-                        xl:ml-12
-                      ">
-                    Planos
-                  </a>
-                </li>
-                <li class="relative group">
-                  <a href="#team" class="
-                        ud-menu-scroll
-                        text-base text-dark
-                        lg:text-white
-                        lg:group-hover:opacity-70
-                        lg:group-hover:text-white
-                        group-hover:text-primary
-                        py-2
-                        lg:py-6 lg:inline-flex lg:px-0
-                        flex
-                        mx-8
-                        lg:mr-0 lg:ml-7
-                        xl:ml-12
-                      ">
-                    Equipe
-                  </a>
-                </li>
-                <li class="relative group">
-                  <a href="#contact" class="
-                        ud-menu-scroll
-                        text-base text-dark
-                        lg:text-white
-                        lg:group-hover:opacity-70
-                        lg:group-hover:text-white
-                        group-hover:text-primary
-                        py-2
-                        lg:py-6 lg:inline-flex lg:px-0
-                        flex
-                        mx-8
-                        lg:mr-0 lg:ml-7
-                        xl:ml-12
-                      ">
-                    Contato
-                  </a>
-                </li>
-                <li class="relative group submenu-item">
-                  <a href="javascript:void(0)" class="
-                        text-base text-dark
-                        lg:text-white
-                        lg:group-hover:opacity-70
-                        lg:group-hover:text-white
-                        group-hover:text-primary
-                        py-2
-                        lg:py-6 lg:inline-flex lg:pl-0 lg:pr-4
-                        flex
-                        mx-8
-                        lg:mr-0 lg:ml-8
-                        xl:ml-12
-                        relative
-                        after:absolute
-                        after:w-2
-                        after:h-2
-                        after:border-b-2
-                        after:border-r-2
-                        after:border-current
-                        after:rotate-45
-                        lg:after:right-0
-                        after:right-1
-                        after:top-1/2
-                        after:-translate-y-1/2
-                        after:mt-[-2px]
-                      ">
-                    Serviços
-                  </a>
-                  <div class="
-                        submenu
-                        hidden
-                        relative
-                        lg:absolute
-                        w-[250px]
-                        top-full
-                        lg:top-[110%]
-                        left-0
-                        rounded-sm
-                        lg:shadow-lg
-                        p-4
-                        lg:block lg:opacity-0 lg:invisible
-                        group-hover:opacity-100
-                        lg:group-hover:visible lg:group-hover:top-full
-                        bg-white
-                        transition-[top]
-                        duration-300
-                      ">
-                    <a target="_blank" href="https://acesso.brasilia.canaatelecom.com.br/central_assinante_web/login" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      CENTRAL DO ASSINANTE
-                    </a>
-                    <a href="/assets/docs/Contrato-Canaa-BRASILIA.pdf" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      CONTRATO BRASILIA - DF
-                    </a>
-                    <a target="_blank" href="/assets/docs/Termo-de-Transferencia-de-Titularidade-Canaa-Telecom.pdf" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      TRANSFERÊNCIA DE TITULARIDADE
-                    </a>
-                    <a target="_blank" href="http://ponto.canaatelecom.com.br:8090/quiosque" class="
-                           block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      QUIOSQUE
-                    </a>
-                    <a href="#" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      ASSUNTOS FINANCEIROS
-                    </a>
-                    <a target="_blank" href="#" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      RECLAMAÇÕES
-                    </a>
-                    <a target="_blank" href="#" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      SAC
-                    </a>
-                    <a target="_blank" href="#" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      SUPORTE TÉCNICO
-                    </a>
-                    <a target="_blank" href="#" class="
-                          block
-                          text-sm text-body-color
-                          rounded
-                          hover:text-primary
-                          py-[10px]
-                          px-4
-                        ">
-                      TRABALHE CONOSCO
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="sm:flex justify-end hidden pr-16 lg:pr-0">
-            <a target="_blank" href="https://acesso.brasilia.canaatelecom.com.br/central_assinante_web/login" class="
-                  text-base
-                  font-medium
-                  text-white
-                  hover:opacity-70
-                  py-3
-                  px-7
-                  loginBtn
-                ">
-              Central do Cliente
-            </a>
-            <a target="_blank" href="signup.html" class="
-                  text-base
-                  font-medium
-                  text-white
-                  bg-darkr bg-opacity-20
-                  rounded-lg
-                  py-3
-                  px-6
-                  hover:bg-white hover:text-dark
-                  signUpBtn
-                  duration-300
-                  ease-in-out
-                ">
-              Assine Já
-            </a>
+              <li>
+                <a target="_blank"
+                  href="/GO/index.html"
+                  class="
+                      load-link
+                      py-4
+                      px-6
+                      ml-4
+                      sm:px-10
+                      inline-flex
+                      font-medium
+                      items-end
+                      justify-center
+                      text-center text-white text-base
+                      bg-darkr
+                      hover:text-white hover:shadow-lg
+                      hover:bg-primary hover:border-white
+                      font-normal
+                      rounded-lg
+                      transition
+                      duration-300
+                      ease-in-out
+                    ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    
+                  Goiânia - GO
+                </a>
+  
+              </li>
+              
+            </ul>
+  
+  
           </div>
         </div>
       </div>
+  
+  
     </div>
   </div>
-  <!-- ====== Navbar Section End -->
-
-  <!-- ====== Hero Section Start -->
-  <div id="home" class="  bg-header h-f ">
-    <div class="container flex justify-between items-center h-f flex-wrap w-full">
-          <div class="flex  items-center">
-            <div class="w-full">
-              <div class="
-                    hero-content
-                    text-center
-                    max-w-[780px]
-                    mx-auto
-                    wow
-                    fadeInUp
-                  " data-wow-delay=".2s">
-                <h1 class="
-                      text-white
-                      font-bold
-                      text-3xl
-                      sm:text-4xl
-                      md:text-[45px]
-                      leading-snug
-                      sm:leading-snug
-                      md:leading-snug
-                      mb-2
-                    ">
-                    Conect-se com a diversão e aproveite 
-                    nossa ultravelocidade
-                </h1>
-                <p class="
-                      text-base
-                      sm:text-lg sm:leading-relaxed
-                      md:text-xl md:leading-relaxed
-                      mx-auto
-                      mb-10
-                      text-[#e4e4e4]
-                      max-w-[]
-                    ">
-                  A internet Prometida de Verdade!
-                </p>
-                <ul class="flex flex-wrap items-center justify-ev mb-10">
-                  <li>
-                    <a target="_blank" href="/DF/index.html" class="
-                    py-4
-                    px-6
-                    sm:px-10
-                    inline-flex
-                    font-medium
-                    items-center
-                    justify-center
-                    text-center text-white text-base
-                    bg-green
-                    hover:text-white hover:shadow-lg
-                    hover:bg-dark hover:border-white
-                    font-normal
-                    rounded-lg
-                    transition
-                    duration-300
-                    ease-in-out
-                  ">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
-                    <path d="M20.52 3.48A11.878 11.878 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.551 4.122 1.6 5.9L0 24l6.153-1.587A11.891 11.891 0 0012 24c6.627 0 12-5.373 12-12a11.878 11.878 0 00-3.48-8.52zM12 22.065a9.882 9.882 0 01-5.315-1.553l-.38-.24-3.654.944.974-3.58-.248-.38A9.88 9.88 0 012.065 12C2.065 6.487 6.487 2.065 12 2.065 17.513 2.065 21.935 6.487 21.935 12S17.513 21.935 12 21.935zm5.047-7.373c-.255-.127-1.504-.742-1.736-.826-.232-.083-.402-.127-.573.128-.17.255-.656.826-.803.993-.148.17-.296.191-.551.064-.255-.127-1.08-.398-2.057-1.268-.761-.675-1.274-1.507-1.423-1.761-.148-.255-.015-.391.112-.519.116-.116.255-.296.382-.446.127-.148.17-.255.255-.425.085-.17.042-.319-.021-.446-.064-.127-.574-1.39-.787-1.903-.207-.497-.421-.429-.573-.429-.148-.011-.319-.015-.49-.015a.933.933 0 00-.68.318 3.177 3.177 0 00-.997 2.364c0 .697.509 1.37.58 1.467.085.106 1.117 1.705 2.71 2.39.407.176.725.28.973.359.409.13.78.112 1.073.068.328-.05 1.004-.408 1.145-.803.141-.396.141-.739.099-.803-.042-.064-.19-.106-.446-.232z"/>
-                  </svg>
-                  Assine agora!
-                </a>
-                
-                  </li>
-                  <li>
-                    <a target="_blank" href="/DF/index.html" class="
-                    py-4
-                    px-6
-                    sm:px-10
-                    inline-flex
-                    font-medium
-                    items-center
-                    justify-center
-                    text-center text-white text-base
-                    bg-green
-                    hover:text-white hover:shadow-lg
-                    hover:bg-dark hover:border-white
-                    font-normal
-                    rounded-lg
-                    transition
-                    duration-300
-                    ease-in-out
-                  ">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-2">
-                    <path d="M20.52 3.48A11.878 11.878 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.551 4.122 1.6 5.9L0 24l6.153-1.587A11.891 11.891 0 0012 24c6.627 0 12-5.373 12-12a11.878 11.878 0 00-3.48-8.52zM12 22.065a9.882 9.882 0 01-5.315-1.553l-.38-.24-3.654.944.974-3.58-.248-.38A9.88 9.88 0 012.065 12C2.065 6.487 6.487 2.065 12 2.065 17.513 2.065 21.935 6.487 21.935 12S17.513 21.935 12 21.935zm5.047-7.373c-.255-.127-1.504-.742-1.736-.826-.232-.083-.402-.127-.573.128-.17.255-.656.826-.803.993-.148.17-.296.191-.551.064-.255-.127-1.08-.398-2.057-1.268-.761-.675-1.274-1.507-1.423-1.761-.148-.255-.015-.391.112-.519.116-.116.255-.296.382-.446.127-.148.17-.255.255-.425.085-.17.042-.319-.021-.446-.064-.127-.574-1.39-.787-1.903-.207-.497-.421-.429-.573-.429-.148-.011-.319-.015-.49-.015a.933.933 0 00-.68.318 3.177 3.177 0 00-.997 2.364c0 .697.509 1.37.58 1.467.085.106 1.117 1.705 2.71 2.39.407.176.725.28.973.359.409.13.78.112 1.073.068.328-.05 1.004-.408 1.145-.803.141-.396.141-.739.099-.803-.042-.064-.19-.106-.446-.232z"/>
-                  </svg>
-                  Assine agora!
-                </a>
-                
-                  </li>
-                </ul>
-                <!-- botões github e Getting Started
-                  
-                <div class="text-center wow fadeInUp" data-wow-delay=".3s">
-                <img src="assets/images/hero/brand.svg" alt="image" class="
-                              max-w-[250px]
-                              w-full
-                              mx-auto
-                              opacity-50
-                              hover:opacity-100
-                              transition
-                              duration-300
-                              ease-in-out
-                            " />
-                -->    
-                </div>
-              </div>
-            </div>
-
-    </div>
-    </div>
   </div>
   <!-- ====== Hero Section End -->
-
+  
+  
+  
   <!-- ====== All Scripts -->
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
   <script>
     // ==== for menu scroll
     const pageLink = document.querySelectorAll(".ud-menu-scroll");
