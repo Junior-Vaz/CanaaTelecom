@@ -1,5 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+mt-[-2px]@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
+
+.khand-light {
+  font-family: "Khand", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.khand-regular {
+  font-family: "Khand", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.khand-medium {
+  font-family: "Khand", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.khand-semibold {
+  font-family: "Khand", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.khand-bold {
+  font-family: "Khand", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&display=swap');
 /*
 ! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
 */
@@ -616,7 +651,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .z-\[999\]{
-  z-index: 999;
+  z-index: 999;  mb-5
 }
 
 .z-20{
@@ -1085,6 +1120,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border-0{
   border-width: 0px;
+  border-radius: 25px;
 }
 
 .border-t{
@@ -1139,36 +1175,78 @@ Ensure the default browser behavior of the `hidden` attribute.
 .header-m{
   width: 100%;
   height: 100vh;
-display: flex;
-
+  display: flex;
 }
+
+@media (max-width: 768px){
+
+  main{
+    background-color: white;
+  }
+  .header-m{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-m{
+    display: flex;
+    background-image: url(/assets/images/about/about-background_tel.png) !important;
+  }
+
+  .dropdown{
+    width: 100%;
+    margin-top: -250px;
+    /*background: url(/assets/images/about/about-background_tel.png) center ;*/    
+  }
+
+  .text-drop-w{
+    color: white;
+  }
+  
+}
+
+.mt-1{
+  margin-top: 5px;
+}
+
 
 .logo-m{
   display: flex;
   justify-content: center;
-  background-image: url(/assets/images/about/about-background.jpg);
-  background-position: center left ;
+  background-image: url(/assets/images/about/about-background_home.png);
+  background-position: center right ;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 100vh;
   background-color: #074588;
+  z-index: 999;
 }
 
 .dropdown{
-  width: 80%;
-  height: 100vh;
-  background-color: #120d5a6c;
+  width: 100%;
+  background-color: #ffffff;
   display: flex;
+  padding-left: 40px;
+  padding-right: 40px;
   justify-content: center;
   align-items: center;
+ 
 }
 .w-drop{
   width: 100%;
-  height: 400px;
-  
+  height: 300px;  
+  border-radius: 25px;
 }
 
+.text-drop{
+  color:rgb(1, 83, 206) ;
+}
+
+.border-drop{
+  border: 1px solid rgba(0, 85, 212, 0.192);
+}
 .w-logo{
   width: 500px;
   margin-bottom: 50px;
@@ -1178,7 +1256,7 @@ display: flex;
 }
 
 .border-0{
-  border: 1px solid #007bff;
+  border: 1px solid #007bff33;
 }
 
 .svg-primary{
@@ -1196,6 +1274,10 @@ display: flex;
 
 .submenu1::-webkit-scrollbar {
   display: none; /* Esconde a barra de rolagem do Chrome/Safari */
+}
+
+.w-full-d{
+  width: 350px;
 }
 
 /*-----*/
@@ -2134,7 +2216,7 @@ body {
 
 .after\:right-1::after{
   content: var(--tw-content);
-  right: 0.25rem;
+  right: -2.25rem;
 }
 
 .after\:top-1\/2::after{

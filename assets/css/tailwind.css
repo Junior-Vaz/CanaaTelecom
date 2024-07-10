@@ -545,16 +545,100 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+/*---------- wifi  --------------------------------*/
+
+.img-casa {
+  max-width: 100%; /* Garante que o contêiner não ultrapasse a largura máxima */
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  position: relative; /* Adiciona posição relativa ao contêiner pai */
+}
+
+.wifi-images {
+  position: absolute; /* Posição absoluta para controlar o posicionamento dentro do contêiner pai */
+  left: -50px; /* Ajusta o posicionamento horizontalmente conforme necessário */
+  top: 20px; /* Ajusta o posicionamento verticalmente conforme necessário */
+  width: 800px; /* Ajuste a largura conforme necessário */
+  height: 500px; /* Ajuste a altura conforme necessário */
+  overflow: hidden; /* Esconde as imagens que ultrapassam o contêiner */
+}
+
+.wifi-images img {
+  position: absolute; /* Posição absoluta para cada imagem */
+  width: 100%; /* Ocupa 100% da largura do contêiner pai */
+  height: 100%; /* Ocupa 100% da altura do contêiner pai */
+  opacity: 0; /* Inicia com opacidade zero */
+  animation: imageChange 9s linear infinite; /* Define a animação para cada imagem */
+}
+
+.wifi-images img:nth-child(1) {
+  animation-delay: 0s; /* Primeira imagem começa imediatamente */
+}
+
+.wifi-images img:nth-child(2) {
+  animation-delay: 3s; /* Segunda imagem começa após 3 segundos */
+}
+
+.wifi-images img:nth-child(3) {
+  animation-delay: 6s; /* Terceira imagem começa após 6 segundos */
+}
+
+@keyframes imageChange {
+  0% {
+    opacity: 1; /* Primeira imagem visível */
+  }
+  33.33% {
+    opacity: 0; /* Primeira imagem invisível, segunda imagem visível */
+  }
+  66.66% {
+    opacity: 0; /* Segunda imagem invisível, terceira imagem visível */
+  }
+  100% {
+    opacity: 1; /* Terceira imagem visível */
+  }
+}
+
+.image {
+  max-width: 100%; /* Garante que a imagem principal seja responsiva */
+  height: auto; /* Altura ajustável para manter a proporção */
+  display: block; /* Remove espaços extras abaixo da imagem */
+  margin: 0 auto; /* Centraliza horizontalmente a imagem principal */
+}
+
+.back-ded{
+  background-image: url(/assets/images/about/11798727_4857390.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+/*----------fim  form --------------------------------*/
+@media (max-width: 960px){
+
+  .warp{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+
+
 @media (min-width: 720px){
   .container{
     max-width: 720px;
   }
+
+  .ml{
+    margin-left: 0px;
+  }
+  
 }
 
 @media (min-width: 960px){
   .container{
     max-width: 960px;
   }
+  
 }
 
 @media (min-width: 1140px){
@@ -797,8 +881,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .mr-2{
-  margin-right: 0.5rem;
+  margin-right: .5rem;
 }
+
+
 
 .mb-1{
   margin-bottom: 0.25rem;
@@ -1783,6 +1869,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: #179BEE;
 }
 
+.seta{
+  width: 25px;
+  height: 15px;
+}
+
 /*--------- animação cards  --------------------------------
 
 .custom-card1 {
@@ -2745,7 +2836,7 @@ body {
   }
 
   .background{
-    background: url(/assets/images/about/about-background.jpg);
+    background: url(/assets/images/header/header-back.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2761,7 +2852,15 @@ body {
  
   }
   .w-full-form{
-    width: 150%;
+    width: 110%;
+  }
+
+  @media (max-width: 427px) {
+    .w-full-form{
+      width: 200%;   
+    }
+   
+  
   }
 
 
