@@ -84,9 +84,107 @@ hr {
   /* 3 */
 }
 
-.image{
-  width: 100rem;
+/*------- Wireless GIF --------*/
+
+
+.piso{
+   /*width: 100rem;*/
+   position: absolute;
+   width: 40rem;
+   top: 90%; /* Centraliza verticalmente */
+   left: 50%; /* Centraliza horizontalmente */
+   transform: translate(-50%, -50%); /* Ajusta para centralizar completamente */
 }
+
+.casa{
+  /*width: 100rem;*/
+  position: absolute;
+  min-width: 60%;
+  top: 50%; /* Centraliza verticalmente */
+  left: 70%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centralizar completamente */
+}
+
+.casa img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
+  image-rendering: auto; /* Melhora a qualidade da renderização da imagem */
+  animation: smoothLoop 5s infinite; /* Aplica uma animação suave ao GIF */
+}
+
+@keyframes smoothLoop {
+  0% {
+    opacity: 1; /* Opacidade inicial */
+  }
+  50% {
+    opacity: 1.5; /* Opacidade reduzida no meio da animação */
+  }
+  100% {
+    opacity: 1; /* Opacidade final */
+  }
+}
+
+
+  
+
+@media (max-width: 960px) { 
+.casa{
+  /*width: 100rem;*/
+  position: absolute;
+  min-width: 20%;
+  top: 97%; /* Centraliza verticalmente */
+  left: 78%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centralizar completamente */
+}
+
+.piso{
+  /*width: 100rem;*/
+  position: absolute;
+  width: 40rem;
+  top: 90%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centralizar completamente */
+}
+
+  
+}
+
+@media (max-width: 440px) {
+
+  .bg-whats{
+    background-color: green;
+  }
+
+ 
+  .casa{
+    /*width: 100rem;*/
+    position: absolute;
+    min-width: 80%;
+    top: 103%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar completamente */
+    
+  }
+
+  .content-casa{
+    height: 60rem;
+  }
+  .buttom-Assine{
+    padding-bottom: 10rem;
+  }
+
+  }
+  
+
+/*-----------------------*/
+
+.foto{
+  width: 50rem;
+}
+
+
 .text-card{
   font-size: 0.9rem;
   font-weight: 500;
@@ -539,6 +637,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 16px;
 }
 
+
 @media (min-width: 540px){
   .container{
     max-width: 540px;
@@ -597,6 +696,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.img-bussiness {
+  max-width: 80%; /* Garante que a imagem principal seja responsiva */
+  height: auto; /* Altura ajustável para manter a proporção */
+  display: block; /* Remove espaços extras abaixo da imagem */
+  margin: 0 auto; /* Centraliza horizontalmente a imagem principal */
+}
+
+
 .image {
   max-width: 100%; /* Garante que a imagem principal seja responsiva */
   height: auto; /* Altura ajustável para manter a proporção */
@@ -609,9 +716,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
+.bussine{
+  padding-right: 20px;
+}
+.rounded-bus{
+  border-radius: 80px;
+}
 /*----------fim  form --------------------------------*/
 @media (max-width: 960px){
 
@@ -1996,19 +2108,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 /* ---------------- modal ----------------*/
 
 /* Estilo básico para o modal */
-.modal {
-  width: 100%;
-  height: 100%;
-}
+
 
 .video{
   border-radius: 25px;
 }
-.modal-content {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
 
+.video-sec{
+padding-left: 20px;
+padding-right: 20px;
+}
 
 
 /*------------------------Botão play----------------------------------------*/
@@ -2833,6 +2942,13 @@ body {
   }
   .rounded-20{
     border-radius: 40px;
+  }
+
+  .back-ded{
+    background: url(/assets/images/about/bussines.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .background{
