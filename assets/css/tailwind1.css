@@ -2613,7 +2613,23 @@ body {
   }
 }
 
+@media (max-width: 960px){
+
+  .dp{
+    position: absolute;
+    top: 31rem;
+  }
+
+  .lg\:after\:right-0::after{
+    right: 0px;
+  }
+  
+ }
+
+
 @media (min-width: 960px){
+
+ 
   .lg\:invisible{
     visibility: hidden;
   }
@@ -2680,6 +2696,7 @@ body {
 
   .lg\:flex{
     display: flex;
+    
   }
 
   .lg\:inline-flex{

@@ -37,7 +37,7 @@
       <div class="dropdown">
            
           <div class=" w-full-d
-                       
+                      dp
                         mx-auto
                         wow
                         fadeInUp
@@ -55,9 +55,9 @@
                           max-w-[]
                         ">
               Selecione sua cidade:</p>
-            <ul class="flex flex-wrap w-full bg-transparent border-0 items-center justify-center mb-10">
-              <li class="relative flex justify-center group submenu-item w-full">
-                <a href="javascript:void(0)" class="
+            <ul class="flex flex-wrap w-full bg-transparent drop border-0 items-center justify-center mb-10">
+              <li class="relative justify-center text-center group  submenu-item w-full">
+                <a href="javascript:void(0)" id="toggleBtn" class="
                       text-drop
                       lg:text-drop
                       lg:group-hover:opacity-70
@@ -67,7 +67,6 @@
                       py-2
                       lg:inline-flex lg:pl-0 lg:pr-4
                       flex
-                      
                       mx-8
                       khand-regular
                       relative
@@ -88,8 +87,10 @@
                 </a>
           
                 <div class="
+                text-left
                 submenu1
                 submenu
+                submenu-cnt
                 hidden
                 relative
                 lg:absolute
@@ -386,6 +387,26 @@ width="25px" height="25px"
   </main>
   
   <!-- ====== Hero Section End -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggleBtn = document.getElementById('toggleBtn');
+      const submenuDiv = document.querySelector('.submenu');
+  
+      toggleBtn.addEventListener('click', function() {
+        submenuDiv.classList.toggle('hidden');
+        submenuDiv.classList.toggle('lg:block');
+        submenuDiv.classList.toggle('lg:opacity-0');
+        submenuDiv.classList.toggle('lg:invisible');
+  
+        // Verifica se a div está visível ou não
+        const isVisible = !submenuDiv.classList.contains('hidden');
+        
+        // Altera o texto do botão baseado na visibilidade da div
+        toggleBtn.textContent = isVisible ? 'Fechar' : 'Escolha Aqui!';
+      });
+    });
+  </script>
+  
   
   
   
