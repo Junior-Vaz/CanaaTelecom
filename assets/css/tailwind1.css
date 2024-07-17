@@ -1197,7 +1197,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .dropdown{
     width: 100%;
-    margin-top: -250px;
     /*background: url(/assets/images/about/about-background_tel.png) center ;*/    
   }
 
@@ -2400,236 +2399,61 @@ body {
   opacity: 1;
 }
 
-@media (max-width: 500px) {
-  .mr-12{
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-}
 
-@media (min-width: 540px){
-  .sm\:flex{
+@media (max-width: 960px) {
+  
+  .logo-m{
     display: flex;
-  }
-
-  .sm\:w-1\/2{
-    width: 50%;
-  }
-
-  .sm\:p-12{
-    padding: 3rem;
-  }
-
-  .sm\:p-8{
-    padding: 2rem;
-  }
-
-  .sm\:p-10{
-    padding: 2.5rem;
-  }
-
-  .sm\:px-12{
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  .sm\:py-12{
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  .sm\:px-10{
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .sm\:px-8{
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .sm\:text-4xl{
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .sm\:text-xl{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .sm\:text-3xl{
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-
-  .sm\:text-\[26px\]{
-    font-size: 26px;
-  }
-
-  .sm\:text-\[28px\]{
-    font-size: 28px;
-  }
-
-  .text-\[29px\]{
-    font-size: 4rem;
-  }
-
-  .sm\:text-2xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .sm\:text-lg{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .sm\:leading-snug{
-    line-height: 1.375;
-  }
-
-  .sm\:leading-relaxed{
-    line-height: 1.625;
-  }
-}
-
-@media (min-width: 720px){
-  .md\:mr-10{
-    margin-right: 2.5rem;
-  }
-
-  .md\:mr-8{
-    margin-right: 2rem;
-  }
-
-  .md\:mb-0{
-    margin-bottom: 0px;
-  }
-
-  .md\:mr-4{
-    margin-right: 1rem;
-  }
-
-  .md\:h-\[400px\]{
-    height: 400px;
-  }
-
-  .md\:w-1\/2{
-    width: 50%;
-  }
-
-  .md\:w-2\/3{
-    width: 66.666667%;
-  }
-
-  .md\:w-1\/3{
-    width: 33.333333%;
-  }
-
-  .md\:w-7\/12{
-    width: 58.333333%;
-  }
-
-  .md\:w-5\/12{
-    width: 41.666667%;
-  }
-
-  .md\:justify-start{
-    justify-content: flex-start;
-  }
-
-  .md\:justify-end{
-    justify-content: flex-end;
-  }
-
-  .md\:border-b{
-    border-bottom-width: 1px;
-  }
-
-  .md\:p-16{
-    padding: 4rem;
-  }
-
-  .md\:p-\[60px\]{
-    padding: 60px;
-  }
-
-  .md\:px-\[60px\]{
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  .md\:py-\[120px\]{
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-
-  .md\:pt-\[130px\]{
-    padding-top: 130px;
-  }
-
-  .md\:pt-\[120px\]{
-    padding-top: 120px;
-  }
-
-  .md\:text-2xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .md\:text-\[42px\]{
-    font-size: 42px;
-  }
-
-  .md\:text-4xl{
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
-  .md\:text-\[26px\]{
-    font-size: 26px;
-  }
-
-  .md\:text-\[45px\]{
-    font-size: 45px;
-  }
-
-  .md\:text-xl{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  .md\:text-\[40px\]{
-    font-size: 40px;
-  }
-
-  .md\:leading-snug{
-    line-height: 1.375;
-  }
-
-  .md\:leading-relaxed{
-    line-height: 1.625;
-  }
-}
-
-@media (max-width: 960px){
-
-  .dp{
-    position: absolute;
-    top: 31rem;
-  }
-
-  .lg\:after\:right-0::after{
-    right: 0px;
+    background-image: url(/assets/images/about/about-background_home.png);
+    background-position: top ;
   }
   
- }
+  .lg\:after\:right-0::after{
+    content: var(--tw-content);
+    right: 0px;
+  }
+
+  .dropdown{
+    margin-top: 20px;
+    display: flex;
+    align-items: start;
+  }
+  .logo-m{
+    border-radius: 100px 50px 100px 50px;
+    margin: 10px;
+  }
+
+  .logo-m::after{
+    
+    position: absolute;
+    left: 10px;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #fabb0d;
+    border-radius: 100px;
+  }
+
+  .logo-m::before{
+    
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    transform: translateY(350px);
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #fabb0d;
+    border-radius: 100px;
+  }
+
+}
+
 
 
 @media (min-width: 960px){
 
- 
+
   .lg\:invisible{
     visibility: hidden;
   }
@@ -2969,81 +2793,12 @@ body {
   }
 }
 
-@media (min-width: 1140px){
-  .xl\:ml-12{
-    margin-left: 3rem;
-  }
 
-  .xl\:mr-4{
-    margin-right: 1rem;
-  }
 
-  .xl\:h-1\/2{
-    height: 50%;
-  }
+/*----------------- TESTE -------------------*/
 
-  .xl\:w-3\/12{
-    width: 25%;
-  }
 
-  .xl\:w-2\/12{
-    width: 16.666667%;
-  }
 
-  .xl\:w-8\/12{
-    width: 66.666667%;
-  }
 
-  .xl\:w-4\/12{
-    width: 33.333333%;
-  }
 
-  .xl\:max-w-\[100px\]{
-    max-width: 100px;
-  }
 
-  .xl\:max-w-\[640px\]{
-    max-width: 640px;
-  }
-
-  .xl\:p-\[70px\]{
-    padding: 70px;
-  }
-
-  .xl\:p-12{
-    padding: 3rem;
-  }
-
-  .xl\:px-6{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  .xl\:text-\[42px\]{
-    font-size: 42px;
-  }
-
-  .xl\:text-lg{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .xl\:text-2xl{
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-}
-
-@media (min-width: 1320px){
-  .\32xl\:max-w-\[120px\]{
-    max-width: 120px;
-  }
-
-  .\32xl\:p-\[60px\]{
-    padding: 60px;
-  }
-
-  .\32xl\:text-\[40px\]{
-    font-size: 40px;
-  }
-}

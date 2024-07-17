@@ -411,10 +411,19 @@
             <h3 class="font-semibold mb-8 text-2xl md:text-[26px]">
               Fale conosco
             </h3>
-            <form>
+            <form action="https://formsubmit.co/comercial.cnt.df@gmail.com" method="POST">
+              <!---
+              
+                 <input type="hidden" name="_next" value="http://127.0.0.1:5500/DF/index.html">
+              <input type="hidden" name="_subject" value="Quero Informações!">
+              <input type="hidden" name="_captcha" value="false">
+              -->
+           
+
+
               <div class="mb-6">
-                <label for="fullName" class="block text-xs text-dark">Nome Completo*</label>
-                <input type="text" name="fullName" placeholder="Seu nome" class="
+                <label for="fullName" class="block text-xs text-dark" required>Nome Completo*</label>
+                <input type="text" name="name" id="name" placeholder="Seu nome" class="
                       w-full
                       border-0 border-b border-[#f1f1f1]
                       focus:border-primary focus:outline-none
@@ -422,8 +431,8 @@
                     " />
               </div>
               <div class="mb-6">
-                <label for="email" class="block text-xs text-dark">Email*</label>
-                <input type="email" name="email" placeholder="email@gmail.com" class="
+                <label for="email" class="block text-xs text-dark" required >Email*</label>
+                <input type="email" name="email" id="email" placeholder="email@gmail.com" class="
                       w-full
                       border-0 border-b border-[#f1f1f1]
                       focus:border-primary focus:outline-none
@@ -431,8 +440,8 @@
                     " />
               </div>
               <div class="mb-6">
-                <label for="phone" class="block text-xs text-dark">Fone*</label>
-                <input type="text" name="Fone" placeholder="+55 xx xxxxx-xxxx" class="
+                <label for="phone" class="block text-xs text-dark" required>Fone*</label>
+                <input type="text" name="Fone" id="number" placeholder="+55 xx xxxxx-xxxx" class="
                       w-full
                       border-0 border-b border-[#f1f1f1]
                       focus:border-primary focus:outline-none
@@ -440,8 +449,8 @@
                     " />
               </div>
               <div class="mb-6">
-                <label for="message" class="block text-xs text-dark">Mensagem*</label>
-                <textarea name="message" rows="1" placeholder="Escreva sua mensagem aqui!" class="
+                <label for="message" class="block text-xs text-dark" required >Mensagem*</label>
+                <textarea name="message" rows="1" id="message" placeholder="Escreva sua mensagem aqui!" class="
                       w-full
                       border-0 border-b border-[#f1f1f1]
                       focus:border-primary focus:outline-none
@@ -469,6 +478,8 @@
                   Enviar mensagem
                 </button>
               </div>
+
+              
             </form>
             </div>
       </div>     
@@ -1090,7 +1101,7 @@
          <h2 class="text-2xl">R$</h2>
        </div>
        <div>
-         <h2 class="font-semibold text-white  text-[29px]">120</h2>
+         <h2 class="font-semibold text-white  text-[29px]">129</h2>
        </div>
        <div class="m-0 ml-4 text-left">
          <h2>,90</h2>
@@ -2577,6 +2588,10 @@
   <!-- ====== Back To Top End -->
 
   <!-- ====== All Scripts -->
+
+  
+  
+ 
   <script src="/assets/js/main.js"></script>
   <script>
     // ==== for menu scroll
