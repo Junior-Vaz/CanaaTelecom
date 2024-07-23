@@ -27,8 +27,21 @@
   overflow: hidden;
 }
 
+/*------animação faq ----*/
+
+.ud-single-testimonial {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.ud-single-testimonial:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+}
+
+/*---------------------*/
+
 .faq-content.show {
-  max-height: 200px; /* ou a altura máxima que você espera que o conteúdo tenha */
+  max-height:750px; /* ou a altura máxima que você espera que o conteúdo tenha */
 }
 
 ::before,
@@ -2935,7 +2948,7 @@ body {
     padding-left: 0px;
   }
   .bg-contr{
-    background-color: #179BEE;
+    background-color: #355aff;
   }
   .bg-green{
     background-color: rgb(9, 148, 9);
