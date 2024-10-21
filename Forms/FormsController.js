@@ -2,16 +2,28 @@
 const nodemailer = require("nodemailer");
 const express = require("express");
 const router = express.Router();
+require('dotenv').config();
+const multer = require('multer')
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+
+//Senhas de Emails
+const pwSuporte = process.env.pwSuporte;
+const pwComercial = process.env.pwComercial;
+const pwSAC = process.env.pwSAC;
+const pwRH = process.env.pwRH
+
 
 // Rotas de Emails para Contatos
-router.post("/send", (req, res) => {
+router.post("/send", async (req, res) => {
+
 
     // Configuração SMTP
     const SMTP = {
-        host: 'smtp.titan.email',
+        host: 'email-ssl.com.br',
         port: 465,
-        user: 'contato@canaaenergy.com.br',
-        pass: '@Canaafast'  // Certifique-se de usar a senha correta
+        user: 'comercial.go@canaatelecom.com.br',
+        pass: pwComercial // Certifique-se de usar a senha correta
     };
 
     // Variáveis dos formulários
@@ -23,7 +35,7 @@ router.post("/send", (req, res) => {
     if (email !== '' && message !== '') {
 
         // Configurando transporter
-        const transporter = nodemailer.createTransport({
+        const transporter = await nodemailer.createTransport({
             host: SMTP.host,
             port: SMTP.port,
             secure: true,
@@ -116,7 +128,7 @@ router.post("/send", (req, res) => {
                     </html>
                     `,
                     from: `"${name}" <${SMTP.user}>`,
-                    to: 'contato@canaaenergy.com.br'
+                    to: 'comercial.go@canaatelecom.com.br'
                 });
 
                 console.log('Email enviado:', mailSend);
@@ -131,20 +143,22 @@ router.post("/send", (req, res) => {
 
     } else {
         console.log('Email ou mensagem inválidos!');
-        // res.render('./erro');
+        
+        setTimeout(() => {
+            res.status(200).redirect('/GO'); // Mude a ordem para chamar status antes de redirect
+        }, 2000);
     }
 });
-
 
 // Rotas de Emails para Central de Reclamações
 router.post("/contact/send", (req, res) => {
 
     // Configuração SMTP
     const SMTP = {
-        host: 'smtp.titan.email',
+        host: 'email-ssl.com.br',
         port: 465,
-        user: 'contato@canaaenergy.com.br',
-        pass: '@Canaafast'  // Certifique-se de usar a senha correta
+        user: 'comercial.go@canaatelecom.com.br',
+        pass: pwComercial // Certifique-se de usar a senha correta
     };
 
     // Variáveis dos formulários
@@ -249,7 +263,7 @@ router.post("/contact/send", (req, res) => {
                     </html>
                     `,
                     from: `"${name}" <${SMTP.user}>`,
-                    to: 'contato@canaaenergy.com.br'
+                    to: 'comercial.go@canaatelecom.com.br'
                 });
 
                 console.log('Email enviado:', mailSend);
@@ -264,12 +278,11 @@ router.post("/contact/send", (req, res) => {
 
     } else {
         console.log('Email ou mensagem inválidos!');
-        // res.render('./erro');
-    }
-});
 
-router.get("/central", (req, res) => {
-    res.render("forms/central");
+        setTimeout(() => {
+            res.redirect('/GO');
+        }, 2000)
+    }
 });
 
 // Rotas de Emails para Suporte técnico
@@ -277,10 +290,10 @@ router.post("/suporte/send", (req, res) => {
 
     // Configuração SMTP
     const SMTP = {
-        host: 'smtp.titan.email',
+        host: 'email-ssl.com.br',
         port: 465,
-        user: 'contato@canaaenergy.com.br',
-        pass: '@Canaafast'  // Certifique-se de usar a senha correta
+        user: 'suporte.go@canaatelecom.com.br',
+        pass: pwSuporte   //Certifique-se de usar a senha correta
     };
 
     // Variáveis dos formulários
@@ -385,7 +398,7 @@ router.post("/suporte/send", (req, res) => {
                     </html>
                     `,
                     from: `"${name}" <${SMTP.user}>`,
-                    to: 'contato@canaaenergy.com.br'
+                    to: 'comercial.go@canaatelecom.com.br'
                 });
 
                 console.log('Email enviado:', mailSend);
@@ -396,11 +409,14 @@ router.post("/suporte/send", (req, res) => {
 
         run();
 
-        res.redirect('/GO');
+        res.redirect('/suporte');
 
     } else {
         console.log('Email ou mensagem inválidos!');
-        // res.render('./erro');
+
+        setTimeout(() => {
+            res.redirect('/suporte');
+        }, 2000)
     }
 });
 
@@ -408,16 +424,15 @@ router.get("/suporte", (req, res) => {
     res.render("forms/suporte");
 });
 
-
 // Rotas de Emails para o SAC
 router.post("/sac/send", (req, res) => {
 
     // Configuração SMTP
     const SMTP = {
-        host: 'smtp.titan.email',
+        host: 'email-ssl.com.br',
         port: 465,
-        user: 'contato@canaaenergy.com.br',
-        pass: '@Canaafast'  // Certifique-se de usar a senha correta
+        user: 'sac.go@canaatelecom.com.br',
+        pass: pwSAC  // Certifique-se de usar a senha correta
     };
 
     // Variáveis dos formulários
@@ -522,7 +537,7 @@ router.post("/sac/send", (req, res) => {
                     </html>
                     `,
                     from: `"${name}" <${SMTP.user}>`,
-                    to: 'contato@canaaenergy.com.br'
+                    to: 'sac.go@canaatelecom.com.br'
                 });
 
                 console.log('Email enviado:', mailSend);
@@ -533,11 +548,14 @@ router.post("/sac/send", (req, res) => {
 
         run();
 
-        res.redirect('/GO');
+        res.redirect('/sac');
 
     } else {
         console.log('Email ou mensagem inválidos!');
-        // res.render('./erro');
+
+        setTimeout(() => {
+            res.redirect('/sac');
+        }, 2000)
     }
 });
 
@@ -545,16 +563,16 @@ router.get("/sac", (req, res) => {
     res.render("forms/sac");
 });
 
-
+/*
 // Rotas de Emails para Trabalhe Conosco
 router.post("/trabalhe/send", (req, res) => {
-
+    
     // Configuração SMTP
     const SMTP = {
-        host: 'smtp.titan.email',
+        host: 'email-ssl.com.br',
         port: 465,
-        user: 'contato@canaaenergy.com.br',
-        pass: '@Canaafast'  // Certifique-se de usar a senha correta
+        user: 'rh.go@canaatelecom.com.br',
+        pass: pwRH  // Certifique-se de usar a senha correta
     };
 
     // Variáveis dos formulários
@@ -562,6 +580,12 @@ router.post("/trabalhe/send", (req, res) => {
     let fone = req.body.fone;
     let email = req.body.email;
     let message = req.body.message;
+    let file = req.body.file;
+
+    const storage = multer.memoryStorage();
+    const upload = multer({storage: storage})
+
+    upload.single('file')
 
     if (email !== '' && message !== '') {
 
@@ -659,7 +683,13 @@ router.post("/trabalhe/send", (req, res) => {
                     </html>
                     `,
                     from: `"${name}" <${SMTP.user}>`,
-                    to: 'contato@canaaenergy.com.br'
+                    to: 'rh.go@canaatelecom.com.br',
+                    attachments: [
+                        {
+                            filename: file,
+                            content: file
+                        }
+                    ]
                 });
 
                 console.log('Email enviado:', mailSend);
@@ -670,13 +700,97 @@ router.post("/trabalhe/send", (req, res) => {
 
         run();
 
-        res.redirect('/GO');
+        res.redirect('/trabalhe');
 
     } else {
         console.log('Email ou mensagem inválidos!');
-        // res.render('./erro');
+
+        setTimeout(()=>{
+            res.redirect('/trabalhe');
+        },2000)
+    }
+});*/
+
+// Rotas de Emails para Trabalhe Conosco
+router.post("/trabalhe/send", upload.single('file'), async (req, res) => {
+
+    // Configuração SMTP
+    const SMTP = {
+        host: 'email-ssl.com.br',
+        port: 465,
+        user: 'rh.go@canaatelecom.com.br',
+        pass: pwRH  // Certifique-se de usar a senha correta
+    };
+
+    // Variáveis dos formulários
+    let name = req.body.name;
+    let fone = req.body.fone;
+    let email = req.body.email;
+    let message = req.body.message;
+
+    if (email !== '' && message !== '') {
+        // Configurando transporter
+        const transporter = await nodemailer.createTransport({
+            host: SMTP.host,
+            port: SMTP.port,
+            secure: true,
+            auth: {
+                user: SMTP.user,
+                pass: SMTP.pass
+            },
+            tls: {
+                rejectUnauthorized: false
+            }
+        });
+
+        try {
+            const mailSend = await transporter.sendMail({
+                subject: 'Quero Contratar',
+                html: `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <style>
+                        /* Seu CSS aqui */
+                    </style>
+                </head>
+                <body>
+                    <div class="email-container">
+                        <div class="email-header"></div>
+                        <div class="email-content">
+                            <p><strong>Nome:</strong> ${name}</p>
+                            <p><strong>Mensagem:</strong> ${message}</p>
+                            <p><strong>Contato:</strong> ${fone}</p>
+                        </div>
+                        <div class="email-footer">
+                            <p>Este é um email gerado automaticamente. Por favor, não responda a este email.</p>
+                        </div>
+                    </div>
+                </body>
+                </html>
+                `,
+                from: `"${name}" <${SMTP.user}>`,
+                to: 'rh.go@canaatelecom.com.br',
+                attachments: req.file ? [{
+                    filename: req.file.originalname,
+                    content: req.file.buffer
+                }] : []
+            });
+
+            console.log('Email enviado:', mailSend);
+            res.redirect('/trabalhe');
+        } catch (error) {
+            console.error('Erro ao enviar email:', error);
+            res.status(500).send('Erro ao enviar o e-mail.');
+        }
+    } else {
+        console.log('Email ou mensagem inválidos!');
+        setTimeout(() => {
+            res.redirect('/trabalhe');
+        }, 2000);
     }
 });
+
 
 router.get("/trabalhe", (req, res) => {
     res.render("forms/trabalhe");
@@ -685,7 +799,5 @@ router.get("/trabalhe", (req, res) => {
 
 
 
-
-
-
+//exportando modulo
 module.exports = router;

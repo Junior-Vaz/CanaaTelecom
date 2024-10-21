@@ -21,6 +21,8 @@
     </script>
   </head>
   <body>
+    <div id="loadingBar" class="loading-bar"></div>
+
      <!-- ====== Navbar Section Start -->
   <div id="header" class="
   ud-header
@@ -373,6 +375,10 @@
           <div class="px-4 w-full lg:w-7/12 xl:w-8/12">
             <div class="ud-contact-content-wrapper">
               <div class="ud-contact-title mb-12 lg:mb-[150px]">
+                
+                <h2 class="text-[35px] font-semibold">
+                  Bem-vindo ao nosso suporte<br/>
+                </h2>
                 <span
                   class="
                     font-headingFont
@@ -384,10 +390,6 @@
                 >
                   CONTATE-NOS
                 </span>
-                <h2 class="text-[35px] font-semibold">
-                  Bem-vindo ao nossa central de <br>reclamações. Em que posso ajudar? <br />
-                
-                </h2>
               </div>
               <div class="flex flex-wrap justify-between mb-12 lg:mb-0">
                 <div class="flex max-w-full w-[330px] mb-8">
@@ -433,6 +435,7 @@
               </div>
             </div>
           </div>
+
           <div class="px-4 w-full lg:w-5/12 xl:w-4/12">
             <div
               class="
@@ -454,7 +457,8 @@
               <h3 class="font-semibold mb-8 text-2xl md:text-[26px]">
                 Envie seu problema
               </h3>
-              <form method="post" action="/suporte/send">
+
+              <form method="post" action="/suporte/send" id="emailForm">
                 <div class="mb-6">
                   <label for="fullName" class="block text-xs text-dark"
                     >Nome Completo*</label
@@ -491,7 +495,7 @@
                   <label for="fone" class="block text-xs text-dark"
                     >Fone*</label
                   >
-                  <input
+                  <input id="fone"
                     type="text"
                     name="fone"
                     placeholder="(xx) xxxxx-xxxx"
@@ -541,7 +545,7 @@
                         ">
                       Enviar mensagem
                   </button>
-                                          
+                                        
                   <div id="customAlertBox" class="custom-hidden custom-overlay ">
                     <div class="custom-alert-box header-mail">
                       <div class="flex  items-center justify-between">
@@ -645,11 +649,13 @@
                       display: none;  
                     }
                   </style>
+                   
                       
               </form>
 
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -668,6 +674,7 @@
             <p class="text-base text-[#f3f4fe] mb-7">
               A internet Prometida de Verdade!
             </p>
+            
             <div class="flex items-center -mx-3">
               <a href="https://www.facebook.com/canaaatelecomoficial"  class="px-3 text-[#dddddd] hover:text-white">
                 <svg width="10" height="18" viewBox="0 0 10 18" class="fill-current">
@@ -782,17 +789,7 @@
                   Trabalhe Conosco
                 </a>
               </li>
-              <li>
-                <a href="/central" class="
-                      inline-block
-                      text-base text-[#f3f4fe]
-                      hover:text-primary
-                      leading-loose
-                      mb-2
-                    ">
-                    Central de Reclamações
-                </a>
-              </li>
+              
               <li>
                 <a href="https://acesso.goiania.canaatelecom.com.br/central_assinante_web/login" class="
                       inline-block
@@ -1119,4 +1116,6 @@
     <!-- ====== All Scripts -->
 
   </body>
+  <script src="/js/form.js"></script>
+
 </html>

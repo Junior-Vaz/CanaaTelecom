@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Central de Reclamações</title>
+    <title>SAC</title>
     <link
       rel="shortcut icon"
       href="/images/favicon.png"
@@ -21,6 +21,8 @@
     </script>
   </head>
   <body>
+    <div id="loadingBar" class="loading-bar"></div>
+
      <!-- ====== Navbar Section Start -->
   <div id="header" class="
   ud-header
@@ -336,7 +338,7 @@
 <div class="text-center max-w-[780px] mx-auto wow fadeInUp" data-wow-delay=".2s">
 
   <h1 class="text-white font-bold pb-8 text-2xl sm:text-4xl md:text-[10px] leading-snug sm:leading-snug md:leading-snug mb-2">
-    SUPORTE CANAÃ TELECOM
+    SAC CANAÃ TELECOM
   </h1>
 
 </p>
@@ -385,8 +387,8 @@
                   CONTATE-NOS
                 </span>
                 <h2 class="text-[35px] font-semibold">
-                  Bem-vindo ao nossa central de <br>reclamações. Em que posso ajudar? <br />
-                
+                  Bem-vindo ao <br>
+                  nosso SAC
                 </h2>
               </div>
               <div class="flex flex-wrap justify-between mb-12 lg:mb-0">
@@ -452,9 +454,9 @@
               data-wow-delay=".2s"
             >
               <h3 class="font-semibold mb-8 text-2xl md:text-[26px]">
-                Envie seu problema
+                Envie sua dúvida
               </h3>
-              <form method="post" action="/suporte/send">
+              <form method="post" action="/sac/send" id="emailForm">
                 <div class="mb-6">
                   <label for="fullName" class="block text-xs text-dark"
                     >Nome Completo*</label
@@ -491,7 +493,7 @@
                   <label for="fone" class="block text-xs text-dark"
                     >Fone*</label
                   >
-                  <input
+                  <input id="fone"
                     type="text"
                     name="fone"
                     placeholder="(xx) xxxxx-xxxx"
@@ -510,7 +512,7 @@
                   <textarea
                     name="message"
                     rows="1"
-                    placeholder="Seu problema aqui..."
+                    placeholder="Sua dúvida aqui..."
                     class="
                       w-full
                       border-0 border-b border-[#f1f1f1]
@@ -542,7 +544,9 @@
                       Enviar mensagem
                   </button>
                                           
-                  <div id="customAlertBox" class="custom-hidden custom-overlay ">
+            
+                  
+           <div id="customAlertBox" class="custom-hidden custom-overlay ">
                     <div class="custom-alert-box header-mail">
                       <div class="flex  items-center justify-between">
                         <img width="120px" src="/images/logo/logo-blue-go.png" alt="Logo" class="custom-logo" />
@@ -645,7 +649,7 @@
                       display: none;  
                     }
                   </style>
-                      
+                            
               </form>
 
             </div>
@@ -782,17 +786,7 @@
                   Trabalhe Conosco
                 </a>
               </li>
-              <li>
-                <a href="/central" class="
-                      inline-block
-                      text-base text-[#f3f4fe]
-                      hover:text-primary
-                      leading-loose
-                      mb-2
-                    ">
-                    Central de Reclamações
-                </a>
-              </li>
+              
               <li>
                 <a href="https://acesso.goiania.canaatelecom.com.br/central_assinante_web/login" class="
                       inline-block
@@ -1119,4 +1113,6 @@
     <!-- ====== All Scripts -->
 
   </body>
+  <script src="/js/form.js"></script>
+
 </html>

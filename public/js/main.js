@@ -33,7 +33,7 @@
   };
 
   //----------------------------------------------------------------
-  
+
 
 
   // ===== responsive navbar
@@ -65,95 +65,95 @@
 
   // ===== Faq accordion
   const faqs = document.querySelectorAll(".single-faq");
-faqs.forEach((el) => {
-  const faqBtn = el.querySelector(".faq-btn");
-  const icon = el.querySelector(".icon");
-  const faqContent = el.querySelector(".faq-content");
+  faqs.forEach((el) => {
+    const faqBtn = el.querySelector(".faq-btn");
+    const icon = el.querySelector(".icon");
+    const faqContent = el.querySelector(".faq-content");
 
-  faqBtn.addEventListener("mouseenter", () => {
-    icon.classList.add("rotate-180");
-    faqContent.classList.add("show");
+    faqBtn.addEventListener("mouseenter", () => {
+      icon.classList.add("rotate-180");
+      faqContent.classList.add("show");
+    });
+
+    faqBtn.addEventListener("mouseleave", () => {
+      icon.classList.remove("rotate-180");
+      faqContent.classList.remove("show");
+    });
   });
+  //================ Troca de texto
 
-  faqBtn.addEventListener("mouseleave", () => {
-    icon.classList.remove("rotate-180");
-    faqContent.classList.remove("show");
-  });
-});
-//================ Troca de texto
 
- 
-document.addEventListener("DOMContentLoaded", function() {
-  const title = document.getElementById("title");
-  const subtitle = document.getElementById("subtitle");
+  document.addEventListener("DOMContentLoaded", function () {
+    const title = document.getElementById("title");
+    const subtitle = document.getElementById("subtitle");
 
-  const texts = [
-    {
-      title: "Desfrute da melhor experiência online",
-      subtitle: "A ultravelocidade que você merece!"
-    },
-    {
-      title: "Tecnologia é ter conexão mais rápida.",
-      subtitle: "E maior cobertura."
-    },
-    {
-      title: "Internet rápida como nunca",
-      subtitle: "Aproveite o melhor da tecnologia"
-    },
-    {
-      title: "Navegação sem limites",
-      subtitle: "Conecte-se com o mundo"
+    const texts = [
+      {
+        title: "Desfrute da melhor experiência online",
+        subtitle: "A ultravelocidade que você merece!"
+      },
+      {
+        title: "Tecnologia é ter conexão mais rápida.",
+        subtitle: "E maior cobertura."
+      },
+      {
+        title: "Internet rápida como nunca",
+        subtitle: "Aproveite o melhor da tecnologia"
+      },
+      {
+        title: "Navegação sem limites",
+        subtitle: "Conecte-se com o mundo"
+      }
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    let typingInterval;
+
+    function typeText(element, text, callback) {
+      if (charIndex < text.length) {
+        element.innerHTML += text.charAt(charIndex);
+        charIndex++;
+        typingInterval = setTimeout(() => typeText(element, text, callback), 30);
+      } else {
+        callback();
+      }
     }
-  ];
 
-  let index = 0;
-  let charIndex = 0;
-  let typingInterval;
-
-  function typeText(element, text, callback) {
-    if (charIndex < text.length) {
-      element.innerHTML += text.charAt(charIndex);
-      charIndex++;
-      typingInterval = setTimeout(() => typeText(element, text, callback), 30);
-    } else {
-      callback();
+    function eraseText(element, callback) {
+      if (charIndex > 0) {
+        element.innerHTML = element.innerHTML.slice(0, -3);
+        charIndex--;
+        typingInterval = setTimeout(() => eraseText(element, callback), 30);
+      } else {
+        callback();
+      }
     }
-  }
 
-  function eraseText(element, callback) {
-    if (charIndex > 0) {
-      element.innerHTML = element.innerHTML.slice(0, -3);
-      charIndex--;
-      typingInterval = setTimeout(() => eraseText(element, callback), 30);
-    } else {
-      callback();
-    }
-  }
-
-  function changeText() {
-    eraseText(title, () => {
-      title.classList.add('typing');
-      charIndex = 0;
-      typeText(title, texts[index].title, () => {
-        title.classList.remove('typing');
-        eraseText(subtitle, () => {
-          subtitle.classList.add('typing');
-          charIndex = 0;
-          typeText(subtitle, texts[index].subtitle, () => {
-            subtitle.classList.remove('typing');
-            index = (index + 1) % texts.length;
-            setTimeout(changeText, 8000); // Espera 3 segundos antes de mudar o texto novamente
+    function changeText() {
+      eraseText(title, () => {
+        title.classList.add('typing');
+        charIndex = 0;
+        typeText(title, texts[index].title, () => {
+          title.classList.remove('typing');
+          eraseText(subtitle, () => {
+            subtitle.classList.add('typing');
+            charIndex = 0;
+            typeText(subtitle, texts[index].subtitle, () => {
+              subtitle.classList.remove('typing');
+              index = (index + 1) % texts.length;
+              setTimeout(changeText, 8000); // Espera 3 segundos antes de mudar o texto novamente
+            });
           });
         });
       });
-    });
-  }
+    }
 
-  changeText(); // Inicia a primeira troca
-});
+    changeText(); // Inicia a primeira troca
+  });
 
-       
-  
+
+
 
   // ===== wow js
   new WOW().init();
