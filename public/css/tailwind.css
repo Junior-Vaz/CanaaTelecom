@@ -1590,7 +1590,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #0070e7;
+  display: flex;
 }
 
 .carousel-inner {
@@ -1600,6 +1600,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   gap: 70px;
   padding-top: 25px;
   padding-bottom: 25px;
+  background-color: #0070e7;
+  padding-right: 100px;
+
 }
 
 .carousel-inner img {
@@ -1609,13 +1612,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   /* espaçamento entre os logos */
 }
 
+.contentCarrosel{
+  display: flex;
+  position: relative;
+}
+
+
+.logoStream {
+    width: 170px;
+    height: 135px;
+    z-index: 999;
+    position: absolute;
+}
+
 @keyframes carousel-animation {
   0% {
     transform: translateX(0%);
   }
 
   100% {
-    transform: translateX(-200%);
+    transform: translateX(-60%);
   }
 }
 

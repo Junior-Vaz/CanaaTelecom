@@ -1,0 +1,42 @@
+name: Deploy
+# Este workflow será disparado sempre que houver um push na branch main
+
+on:
+  push:
+    branches:
+      - main
+
+# Definindo o job de deploy
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checar o código do repositório
+      - name: Checkout the code
+        uses: actions/checkout@v2
+        
+      # 2. Instalar o Node.js (especifique a versão da sua aplicação)
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '21'
+
+      # 3. Instalar as dependências
+      - name: Install dependencies
+        run: npm install
+        
+      # 4. Conectar ao servidor remoto e executar o script de deploy
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            echo "StrictHostKeyChecking no" >> ~/.ssh/config
+            cd /var/www/html/TesteDeploy
+            git pull origin main
+            npm install
+            npm audit fix  # Adicione esta linha para corrigir vulnerabilidades
+            
