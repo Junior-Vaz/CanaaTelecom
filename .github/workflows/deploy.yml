@@ -35,8 +35,9 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             echo "StrictHostKeyChecking no" >> ~/.ssh/config
-            cd /var/www/html/TesteDeploy
+            cd /var/www/canaatelecom.com
             git pull origin main
             npm install
+            pm2 start index.js
             npm audit fix  # Adicione esta linha para corrigir vulnerabilidades
             
