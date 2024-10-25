@@ -34,10 +34,11 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            set -x  # Habilitar debug
+            mkdir -p ~/.ssh
             echo "StrictHostKeyChecking no" >> ~/.ssh/config
             cd /var/www/canaatelecom.com
             git pull origin main
             npm install
             pm2 start index.js
-            npm audit fix  # Adicione esta linha para corrigir vulnerabilidades
-            
+            npm audit fix
